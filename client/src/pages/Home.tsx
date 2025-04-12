@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProxyForm from "@/components/ProxyForm";
 import StatusMessage from "@/components/StatusMessage";
@@ -6,8 +6,7 @@ import ProxyContent from "@/components/ProxyContent";
 import FeaturesSection from "@/components/FeaturesSection";
 import SettingsPanel from "@/components/SettingsPanel";
 import InteractionLogs, { LogEntry } from "@/components/InteractionLogs";
-import { GlobeIcon } from "@/components/ui/icon";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { StatusMessage as StatusMessageType } from "@/lib/types";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -134,51 +133,16 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                <GlobeIcon className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-semibold text-slate-900">Ultraviolet Node</h1>
-                <p className="text-xs text-slate-500">Web Proxy Service</p>
-              </div>
+      <div className="relative bg-white shadow">
+        <div className="absolute top-4 right-4 z-10 flex items-center">
+          <SettingsPanel onActivateDebug={handleActivateDebug} />
+          {debugMode && (
+            <div className="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+              Debug Mode Active
             </div>
-            <div className="flex items-center space-x-4">
-              <nav className="hidden md:block">
-                <ul className="flex space-x-8">
-                  <li>
-                    <Link href="/" className="text-primary font-medium hover:text-primary-700 transition">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about" className="text-slate-600 font-medium hover:text-slate-900 transition">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/faq" className="text-slate-600 font-medium hover:text-slate-900 transition">
-                      FAQ
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-              <div className="flex items-center">
-                <div className="mr-4">
-                  <SettingsPanel onActivateDebug={handleActivateDebug} />
-                </div>
-                {debugMode && (
-                  <div className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
-                    Debug Mode Active
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          )}
         </div>
+        <Header />
       </div>
       
       <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">

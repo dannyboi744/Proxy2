@@ -21,18 +21,18 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
             <li>
-              <Link href="/">
-                <a className="text-primary font-medium hover:text-primary-700 transition">Home</a>
+              <Link href="/" className="text-primary font-medium hover:text-primary-700 transition">
+                Home
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a className="text-slate-600 font-medium hover:text-slate-900 transition">About</a>
+              <Link href="/about" className="text-slate-600 font-medium hover:text-slate-900 transition">
+                About
               </Link>
             </li>
             <li>
-              <Link href="/faq">
-                <a className="text-slate-600 font-medium hover:text-slate-900 transition">FAQ</a>
+              <Link href="/faq" className="text-slate-600 font-medium hover:text-slate-900 transition">
+                FAQ
               </Link>
             </li>
           </ul>
@@ -48,18 +48,18 @@ export default function Header() {
             <nav>
               <ul className="space-y-4 mt-6">
                 <li>
-                  <Link href="/">
-                    <a className="text-primary font-medium hover:text-primary-700 transition">Home</a>
+                  <Link href="/" className="text-primary font-medium hover:text-primary-700 transition">
+                    Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about">
-                    <a className="text-slate-600 font-medium hover:text-slate-900 transition">About</a>
+                  <Link href="/about" className="text-slate-600 font-medium hover:text-slate-900 transition">
+                    About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq">
-                    <a className="text-slate-600 font-medium hover:text-slate-900 transition">FAQ</a>
+                  <Link href="/faq" className="text-slate-600 font-medium hover:text-slate-900 transition">
+                    FAQ
                   </Link>
                 </li>
               </ul>

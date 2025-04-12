@@ -50,7 +50,7 @@ export default function SettingsPanel({ onActivateDebug }: SettingsPanelProps) {
                 placeholder="Enter code"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
-                onKeyPress={(e) => {
+                onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     handleSubmitCode();
                   }
